@@ -1,0 +1,28 @@
+<header class="header-area">
+  <div class="container">
+    <nav class="main-nav">
+      <a href="index.html" class="logo">
+        <h4>Car<span>Forum</span></h4>
+      </a>
+      <ul class="nav">
+        <li>
+          <a href="#top">Home</a>
+        </li>
+        <li><a href="#about">Cars Theme</a></li>
+        <li>
+          <a href="#services">Add car theme</a>
+        </li>
+        <li *ngIf="!isLoggedIn"><a href="#blog">Login</a></li>
+        <li *ngIf="isLoggedIn"><a href="#blog">Logout</a></li>
+        <li *ngIf="!isLoggedIn">
+          <a href="#contact">Register</a>
+        </li>
+        <li>
+          <div *ngIf="isLoggedIn" class="main-red-text">
+            <a>Welcome</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
