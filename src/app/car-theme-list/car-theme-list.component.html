@@ -1,20 +1,23 @@
-<div class="all-car-theme">
-  <div *ngFor="let carTheme of carThemes" class="container">
-    <div class="wrapper">
-      <div class="title">
-        <h1>{{ carTheme.themeName }}</h1>
-      </div>
+<div class="all-themes">
+  <div class="block-name"><h1>All Car Themes</h1></div>
+  <div class="all-car-theme">
+    <div *ngFor="let carTheme of carThemes" class="container">
+      <div class="wrapper">
+        <div class="title">
+          <h1>{{ carTheme.themeName }}</h1>
+        </div>
 
-      <div class="button-wrapper">
-        <button class="btn fill">COMMENTS</button>
+        <div class="button-wrapper">
+          <button class="btn fill">COMMENTS</button>
+        </div>
+        <div class="info">
+          <p>Theme made by: {{ carTheme.userId.username }}</p>
+          <p>Subscribers: {{ carTheme.subscribers?.length || 0 }}</p>
+        </div>
       </div>
-      <div class="info">
-        <p>Theme made by: {{ carTheme.userId.username }}</p>
-        <p>Subscribers: {{ carTheme.subscribers?.length || 0 }}</p>
+      <div *ngIf="" class="button-wrapper">
+        <button class="btn fill sub">SUBSCRIBE</button>
       </div>
-    </div>
-    <div *ngIf="" class="button-wrapper">
-      <button class="btn fill sub">SUBSCRIBE</button>
     </div>
   </div>
 </div>

@@ -1,0 +1,22 @@
+.all-theme-posts {
+  display: flex;
+  width: 30%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  height: auto;
+  gap: 2em;
+  border: 2px solid red;
+}
+
+h1 {
+  font-family: "Righteous", sans-serif;
+  color: rgba(255, 255, 255, 0.98);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1em;
+}
+
+.block-name h1 {
+  font-size: 30px;
+}

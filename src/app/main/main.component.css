@@ -11,3 +11,13 @@
   justify-content: center;
   height: 100vh;
 }
+
+.all-themes {
+  border: 2px solid yellow;
+  width: 60%;
+}
+
+.all-coments {
+  border: 2px solid rgb(30, 255, 0);
+  width: 40%;
+}
