@@ -10,6 +10,7 @@ import { CarThemeListComponent } from './car-theme-list/car-theme-list.component
 import { CarPostsListComponent } from './car-posts-list/car-posts-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
     MainComponent,
     CarThemeListComponent,
     CarPostsListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
