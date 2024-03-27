@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { CarThemeListComponent } from './car-theme-list/car-theme-list.component';
 import { CarPostsListComponent } from './car-posts-list/car-posts-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: DATE_PIPE_DEFAULT_OPTIONS,
+      useValue: { dateFormat: 'short' },
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -15,9 +15,11 @@
 .all-themes {
   border: 2px solid yellow;
   width: 60%;
+  height: 90vh;
 }
 
 .all-coments {
   border: 2px solid rgb(30, 255, 0);
   width: 40%;
+  height: 90vh;
 }

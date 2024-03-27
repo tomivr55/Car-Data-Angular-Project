@@ -1,4 +1,15 @@
 <div class="all-themes">
-  <div class="block-name"><h1>coments</h1></div>
-  <div class="all-theme-posts"></div>
+  <div class="block-name"><h1>comments</h1></div>
+  <div class="all-theme-posts">
+    <div class="container" *ngFor="let coment of themeComent">
+      <h1>Comment for: {{ coment.themeId.themeName }}</h1>
+      <hr />
+      <p>{{ coment.text }}</p>
+      <hr />
+      <div class="info">
+        <p>{{ coment.created_at | date }}</p>
+        <p>{{ coment.userId.username }}</p>
+      </div>
+    </div>
+  </div>
 </div>
