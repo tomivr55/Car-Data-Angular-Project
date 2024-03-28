@@ -11,6 +11,7 @@ import { CarPostsListComponent } from './car-posts-list/car-posts-list.component
 import { HttpClientModule } from '@angular/common/http';
 import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { HomeComponent } from './home/home.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HomeComponent } from './home/home.component';
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
+    UserModule,
   ],
   providers: [
     {
