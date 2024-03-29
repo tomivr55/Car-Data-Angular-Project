@@ -55,18 +55,19 @@
   outline: none;
 }
 
-.signup {
+.login {
   font-size: 1.1em;
   text-align: center;
 }
 
-.signup label {
+.login label a {
   color: rgba(0, 212, 255, 0.9);
   cursor: pointer;
+  text-decoration: none;
 }
 
-.signup label:hover {
-  text-decoration: underline;
+.login label a:hover {
+  color: white;
 }
 
 .form input.button {

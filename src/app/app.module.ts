@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
+import { CarThemeModule } from './car-theme/car-theme.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     HttpClientModule,
     UserModule,
+    CarThemeModule,
   ],
   providers: [
     {

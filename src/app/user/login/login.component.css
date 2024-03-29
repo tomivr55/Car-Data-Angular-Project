@@ -49,18 +49,19 @@
   outline: none;
 }
 
-.signup {
+.register {
   font-size: 1.1em;
   text-align: center;
 }
 
-.signup label {
+.register label a {
   color: rgba(0, 212, 255, 0.9);
   cursor: pointer;
+  text-decoration: none;
 }
 
-.signup label:hover {
-  text-decoration: underline;
+.register label a:hover {
+  color: white;
 }
 
 .form input.button {
