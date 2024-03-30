@@ -28,10 +28,10 @@ import { ErrorComponent } from './error/error.component';
     BrowserModule,
     CoreModule,
     SharedModule,
-    AppRoutingModule,
     HttpClientModule,
     UserModule,
     CarThemeModule,
+    AppRoutingModule,
   ],
   providers: [
     {
