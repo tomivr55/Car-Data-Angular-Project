@@ -1,6 +1,8 @@
+import { CarPost } from './carPost';
+
 export interface User {
   themes: string[];
-  posts: string[];
+  posts: CarPost[];
   _id: string;
   tel: string;
   email: string;
@@ -9,4 +11,12 @@ export interface User {
   created_at: string;
   updatedAt: string;
   __v: number;
+}
+
+export interface AuthUser {
+  firstName: string;
+  email: string;
+  phoneNumber: string;
+  password: string;
+  id: string;
 }

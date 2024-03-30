@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from '../main/main.component';
 import { AddCarThemeComponent } from './add-car-theme/add-car-theme.component';
 import { CurrentCarThemeComponent } from './current-car-theme/current-car-theme.component';
+import { AuthenticationActivate } from '../guards/auth.activate';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   {
     path: 'add-theme',
     component: AddCarThemeComponent,
+    canActivate: [AuthenticationActivate],
   },
 ];
 

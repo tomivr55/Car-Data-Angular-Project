@@ -8,7 +8,7 @@
         </div>
 
         <div class="button-wrapper">
-          <button class="btn fill">COMMENTS</button>
+          <button [routerLink]="carTheme._id" class="btn fill">COMMENTS</button>
         </div>
         <div class="info">
           <p>Theme made by: {{ carTheme.userId.username }}</p>
@@ -16,8 +16,19 @@
         </div>
       </div>
       <!-- //Hide button -->
-      <div *ngIf="" class="button-wrapper">
-        <button class="btn fill sub">SUBSCRIBE</button>
+      <div class="button-wrapper">
+        <button
+          *ngIf="isLoggedIn && !isSubscribed(carTheme)"
+          class="btn fill sub"
+        >
+          SUBSCRIBE
+        </button>
+        <button
+          *ngIf="isLoggedIn && isSubscribed(carTheme)"
+          class="btn fill unsub"
+        >
+          UNSUBSCRIBE
+        </button>
       </div>
     </div>
   </div>

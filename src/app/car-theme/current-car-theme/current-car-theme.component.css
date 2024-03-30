@@ -42,17 +42,28 @@
   height: 100%;
 }
 
+.user-name {
+  font-size: 1em;
+  font-weight: bold;
+}
+.authot-info {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
 .banner-image img {
   background-position: center;
   background-size: cover;
-  width: 100px;
+  width: 150px;
   aspect-ratio: 1/1;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.255);
 }
 .comment {
-  display: block;
   display: flex;
+  gap: 1em;
 }
 .author {
   display: flex;
@@ -69,9 +80,11 @@
   padding-top: 10px;
 }
 
-.textarea {
-  padding: 10px;
+textarea {
   border: 2px solid rgba(255, 255, 255, 0.125);
+  padding: 20px;
+  width: 750px;
+  font-size: 17px;
   border-radius: 12px;
 }
 
@@ -92,13 +105,16 @@ p {
   text-transform: uppercase;
 }
 
+.form p {
+  padding: 10px;
+}
+
 .btn {
   background: rgba(0, 212, 255, 0.9);
   color: rgba(255, 255, 255, 0.95);
   filter: drop-shadow(0);
   font-weight: bold;
   border: none;
-  margin-top: 10px;
   padding: 12px 24px;
   border-radius: 24px;
   font-size: 0.8em;
@@ -121,14 +137,25 @@ p {
   transition: all 0.3s ease;
 }
 
-textarea {
+.comment-text {
   padding: 20px;
   width: 750px;
   font-size: 17px;
   border: 1px solid #ddd;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .post {
   background: rgba(0, 212, 255, 0.9);
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.button-wrapper span {
+  font-weight: bold;
 }

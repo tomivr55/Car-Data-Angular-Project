@@ -1,41 +1,45 @@
 <div class="content">
   <div class="container">
     <div class="theme">
-      <p>Date: 2024.02.28</p>
-      <h1>Toyota Supra</h1>
-      <p>Subscribers: 5</p>
+      <p>Date: {{ currentCarTheme.created_at | date }}</p>
+      <h1>{{ currentCarTheme.themeName }}</h1>
+      <p>Subscribers: {{ currentCarTheme.subscribers?.length || 0 }}</p>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" *ngFor="let comment of currentCarTheme.posts">
     <div class="comment">
       <div class="author">
-        <div class="banner-image">
-          <img src="../../../assets/images.png" alt="" />
+        <div class="authot-info">
+          <div class="banner-image">
+            <img src="../../../assets/images.png" alt="author" />
+          </div>
+          <p class="user-name">{{ comment.userId.username }}</p>
         </div>
-        <p>Author:</p>
-        <p>Date: 2024.02.28</p>
+        <p>Date:</p>
+        <p>{{ comment.created_at | date }}</p>
       </div>
-      <div class="textarea">
+      <div class="comment-text">
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et totam
-          exercitationem laboriosa
+          {{ comment.text }}
         </p>
       </div>
     </div>
     <div class="info">
       <div class="button-wrapper">
-        <button class="btn fill">
+        <button *ngIf="isLoggedIn" class="btn fill">
           <i class="fa-solid fa-thumbs-up"></i> LIKE
         </button>
-        <p>Likes: 20</p>
+        <p>
+          Likes: <span>{{ comment.likes?.length || 0 }}</span>
+        </p>
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" *ngIf="isLoggedIn">
     <div class="form">
-      <p>"Current user" comment:</p>
+      <p>{{ userName }} comment:</p>
       <textarea type="text" name="postText" rows="10"></textarea>
     </div>
     <button class="btn fill post">POST</button>

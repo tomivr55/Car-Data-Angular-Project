@@ -7,10 +7,29 @@
 
       <form>
         <p>This theme is for:</p>
-        <input type="text" placeholder="Car brand and model" />
+        <input
+          type="text"
+          name="themeName"
+          id="themeName"
+          placeholder="Car brand and model"
+          #inputThemeName
+        />
         <p>Text:</p>
-        <textarea type="text" name="postText" rows="10"></textarea>
-        <input type="button" class="button" value="POST" />
+        <textarea
+          type="text"
+          name="postText"
+          id="postText"
+          rows="10"
+          #textareaPostText
+        ></textarea>
+        <input
+          (click)="
+            addTheme($event, inputThemeName.value, textareaPostText.value)
+          "
+          type="button"
+          class="button"
+          value="POST"
+        />
       </form>
     </div>
   </div>

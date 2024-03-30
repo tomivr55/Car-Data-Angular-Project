@@ -13,13 +13,17 @@
           <a routerLink="/add-theme">Add car theme</a>
         </li>
         <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
-        <li *ngIf="isLoggedIn"><a>Logout</a></li>
+
+        <li *ngIf="isLoggedIn" (click)="logout()">
+          <a>Logout</a>
+        </li>
         <li *ngIf="!isLoggedIn">
           <a routerLink="/register">Register</a>
         </li>
+
         <li>
           <div *ngIf="isLoggedIn" class="main-red-text">
-            <a>Welcome</a>
+            <a routerLink="/profile"> {{ userFirstName }}`s profile</a>
           </div>
         </li>
       </ul>

@@ -5,13 +5,26 @@
         <h1>Login</h1>
       </div>
       <form>
-        <input type="text" placeholder="Enter your email" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+          #inputEmail
+        />
         <input
           type="password"
+          name="password"
           id="password"
           placeholder="Enter your password"
+          #inputPassword
         />
-        <input type="button" class="button" value="LOGIN" />
+        <input
+          (click)="login(inputEmail.value, inputPassword.value)"
+          type="button"
+          class="button"
+          value="LOGIN"
+        />
       </form>
       <div class="register">
         <span class="register"
