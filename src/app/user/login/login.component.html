@@ -4,27 +4,41 @@
       <div class="header">
         <h1>Login</h1>
       </div>
-      <form>
+      <form [formGroup]="form" (ngSubmit)="login()">
         <input
           type="email"
           name="email"
           id="email"
           placeholder="Enter your email"
-          #inputEmail
+          formControlName="email"
+          required
         />
+
+        <!-- [class]="!!form.get('email')?.touched ? 'red' : 'green'" -->
+
+        <ng-container *ngIf="form.get('email')?.touched">
+          <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+            Email is required!
+            <!-- само ако има required грешка да се появи-->
+          </p>
+          <p
+            class="error"
+            *ngIf="form.get('email')?.errors?.['emailValidator']"
+          >
+            Email is not valid!
+            <!--само ако email-а не е валиден-->>
+          </p>
+        </ng-container>
+
         <input
           type="password"
           name="password"
           id="password"
           placeholder="Enter your password"
-          #inputPassword
+          formControlName="password"
+          required
         />
-        <input
-          (click)="login(inputEmail.value, inputPassword.value)"
-          type="button"
-          class="button"
-          value="LOGIN"
-        />
+        <input type="button" class="button" value="LOGIN" type="submit" />
       </form>
       <div class="register">
         <span class="register"

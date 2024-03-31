@@ -18,6 +18,7 @@
   border: 1px solid rgba(255, 255, 255, 0.125);
   filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
   text-align: center;
+  width: 500px;
   font-family: "Righteous", sans-serif;
 }
 
@@ -43,10 +44,18 @@
   width: 90%;
   padding: 0 15px;
   font-size: 17px;
-  margin-bottom: 1.3em;
+  margin-bottom: 5px;
   border: 1px solid #ddd;
   border-radius: 24px;
   outline: none;
+}
+
+.green {
+  border: 6px solid greenyellow;
+}
+
+.red {
+  border: 6px solid rgb(255, 0, 0);
 }
 
 .register {
@@ -84,4 +93,10 @@
   border-color: rgba(255, 255, 255, 0.9);
   filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
   transition: all 0.3s ease;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding-top: 0;
 }
