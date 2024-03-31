@@ -26,7 +26,7 @@
             *ngIf="form.get('email')?.errors?.['emailValidator']"
           >
             Email is not valid!
-            <!--само ако email-а не е валиден-->>
+            <!--само ако email-а не е валиден-->
           </p>
         </ng-container>
 
@@ -38,6 +38,17 @@
           formControlName="password"
           required
         />
+
+        <ng-container *ngIf="form.get('password')?.touched">
+          <p class="error" *ngIf="form.get('password')?.errors?.['required']">
+            Password is required!
+            <!-- само ако има required грешка да се появи-->
+          </p>
+          <p class="error" *ngIf="form.get('password')?.errors?.['minlength']">
+            Password must be at least 5 characters!
+            <!--ако е по къса от 5 символа-->
+          </p>
+        </ng-container>
         <input type="button" class="button" value="LOGIN" type="submit" />
       </form>
       <div class="register">

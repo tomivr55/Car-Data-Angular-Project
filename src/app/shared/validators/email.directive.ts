@@ -14,19 +14,13 @@ import { emailValidator } from '../utils/email-validator';
     { provide: NG_VALIDATORS, useExisting: EmailDirective, multi: true },
   ],
 })
-export class EmailDirective implements Validator, OnChanges {
+export class EmailDirective implements Validator {
   @Input() appEmail: string[] = [];
   constructor() {}
-  validator: ValidatorFn = () => null;
 
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
-    return this.validator(control);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    const { currentValue } = changes['appEmail'];
-    if (currentValue?.length) {
-      this.validator = emailValidator(currentValue);
-    }
+    const validatorFn = emailValidator(this.appEmail);
+    const result = validatorFn(control);
+    return result;
   }
 }
