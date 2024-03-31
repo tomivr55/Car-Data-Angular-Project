@@ -54,11 +54,12 @@
   outline: none;
 }
 
-form p {
+p {
   font-family: "Righteous", sans-serif;
   color: white;
   letter-spacing: 1.3px;
   padding-bottom: 7px;
+  font-weight: bold;
 }
 textarea {
   width: 100%;
@@ -90,4 +91,10 @@ textarea {
   border-color: rgba(255, 255, 255, 0.9);
   filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
   transition: all 0.3s ease;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding-top: 0;
 }

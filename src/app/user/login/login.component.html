@@ -6,6 +6,7 @@
       </div>
       <form [formGroup]="form" (ngSubmit)="login()">
         <input
+          [style]="{borderLeftColor : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' red' : 'green'}"
           type="email"
           name="email"
           id="email"

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -7,15 +8,16 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./add-car-theme.component.css'],
 })
 export class AddCarThemeComponent {
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private fb: FormBuilder) {}
 
-  addTheme(ev: Event, themeName: string, postText: string) {
-    ev.preventDefault();
-    console.log({ themeName, postText });
+  form = this.fb.group({
+    themeName: ['', [Validators.required, Validators.minLength(5)]],
+    postText: ['', [Validators.required, Validators.minLength(10)]],
+  });
 
-    return this.apiService.createCarTheme(themeName, postText);
-    // .subscribe((data) => {
-    //   console.log({ data });
-    // });
+  addTheme(): void {
+    if (this.form.invalid) {
+      return;
+    }
   }
 }

@@ -1,0 +1,52 @@
+<div class="content">
+  <div class="container">
+    <div class="wrapper">
+      <div class="banner-image">
+        <img src="../../../assets/images.png" alt="picture" />
+      </div>
+      <h1>User profile</h1>
+
+      <div class="profile-info">
+        <div class="static">
+          <p>Username:</p>
+          <p>Email:</p>
+          <p>Phone:</p>
+        </div>
+
+        <form class="dinamic" [formGroup]="form">
+          <input
+            type="input"
+            name="username"
+            id="username"
+            [value]="profileDetails.username"
+            formControlName="username"
+          />
+          <input
+            type="input"
+            name="email"
+            id="email"
+            [value]="profileDetails.email"
+            formControlName="email"
+          />
+          <input
+            type="input"
+            name="tel"
+            id="tel"
+            [value]="profileDetails.tel"
+            formControlName="tel"
+          />
+        </form>
+      </div>
+    </div>
+    <div class="button-wrapper">
+      <button routerLink="/profile" class="btn fill red">Cancel</button>
+      <button
+        class="btn fill blue"
+        type="submit"
+        (click)="saveProfileHandler()"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</div>

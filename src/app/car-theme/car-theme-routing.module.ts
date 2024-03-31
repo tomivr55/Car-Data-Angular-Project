@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from '../main/main.component';
-import { AddCarThemeComponent } from './add-car-theme/add-car-theme.component';
 import { CurrentCarThemeComponent } from './current-car-theme/current-car-theme.component';
 import { AuthenticationActivate } from '../guards/auth.activate';
+import { AddCarThemeComponent } from './add-car-theme/add-car-theme.component';
 
 const routes: Routes = [
   {

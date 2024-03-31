@@ -5,31 +5,45 @@
         <h1>Add Car theme</h1>
       </div>
 
-      <form>
+      <form [formGroup]="form" (ngSubmit)="addTheme()">
         <p>This theme is for:</p>
         <input
           type="text"
           name="themeName"
           id="themeName"
           placeholder="Car brand and model"
-          #inputThemeName
+          formControlName="themeName"
+          required
         />
+
+        <ng-container *ngIf="form.get('themeName')?.touched">
+          <p class="error" *ngIf="form.get('themeName')?.errors?.['required']">
+            Theme name is required!
+          </p>
+          <p class="error" *ngIf="form.get('themeName')?.errors?.['minlength']">
+            Theme name must be at least 5 characters long!
+          </p>
+        </ng-container>
+
         <p>Text:</p>
         <textarea
           type="text"
           name="postText"
           id="postText"
           rows="10"
-          #textareaPostText
+          formControlName="postText"
+          required
         ></textarea>
-        <input
-          (click)="
-            addTheme($event, inputThemeName.value, textareaPostText.value)
-          "
-          type="button"
-          class="button"
-          value="POST"
-        />
+
+        <ng-container *ngIf="form.get('postText')?.touched">
+          <p class="error" *ngIf="form.get('postText')?.errors?.['required']">
+            The field with your post is required!
+          </p>
+          <p class="error" *ngIf="form.get('postText')?.errors?.['minlength']">
+            Post must be at least 10 characters long!
+          </p>
+        </ng-container>
+        <input type="button" type="submit" class="button" value="POST" />
       </form>
     </div>
   </div>

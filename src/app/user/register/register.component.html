@@ -91,7 +91,13 @@
             </p>
           </ng-container>
         </ng-container>
-        <input type="button" class="button" value="REGISTER" type="submit" />
+        <input
+          [disabled]="form.invalid"
+          type="button"
+          class="button"
+          value="REGISTER"
+          type="submit"
+        />
       </form>
       <div class="login">
         <span class="login"
