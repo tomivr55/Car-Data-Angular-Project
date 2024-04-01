@@ -15,6 +15,7 @@ import { UserModule } from './user/user.module';
 
 import { ErrorComponent } from './error/error.component';
 import { CarThemeModule } from './car-theme/car-theme.module';
+import { AppInterceptorProvider } from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CarThemeModule } from './car-theme/car-theme.module';
     AppRoutingModule,
   ],
   providers: [
+    AppInterceptorProvider,
     {
       provide: DATE_PIPE_DEFAULT_OPTIONS,
       useValue: { dateFormat: 'short' },

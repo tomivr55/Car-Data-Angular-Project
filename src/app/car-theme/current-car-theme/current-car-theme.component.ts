@@ -23,7 +23,7 @@ export class CurrentCarThemeComponent implements OnInit {
   }
 
   get userName(): string {
-    return this.userService.user?.firstName || '';
+    return this.userService.user?.username || '';
   }
 
   ngOnInit(): void {

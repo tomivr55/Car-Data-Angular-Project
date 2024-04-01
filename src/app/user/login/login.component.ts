@@ -26,14 +26,11 @@ export class LoginComponent {
     if (this.form.invalid) {
       return;
     }
-
-    this.userService.login();
-    this.router.navigate(['/home']);
+    debugger;
+    const { email, password } = this.form.value;
     console.log(this.form.value);
+    this.userService
+      .login(email!, password!)
+      .subscribe(() => this.router.navigate(['/home']));
   }
-
-  // login(email: string, password: string) {
-  //   this.userService.login();
-  //   this.router.navigate(['/home']);
-  // }
 }

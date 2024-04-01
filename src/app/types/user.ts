@@ -14,9 +14,9 @@ export interface User {
 }
 
 export interface AuthUser {
-  firstName: string;
+  username: string;
   email: string;
-  phoneNumber: string;
+  tel: string;
   password: string;
   id: string;
 }
