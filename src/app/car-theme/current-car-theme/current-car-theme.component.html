@@ -3,7 +3,7 @@
     <div class="theme">
       <p>Date: {{ currentCarTheme.created_at | date }}</p>
       <h1>{{ currentCarTheme.themeName }}</h1>
-      <p>Subscribers: {{ currentCarTheme.subscribers?.length || 0 }}</p>
+      <p>Subscribers: {{ currentCarTheme.subscribers.length || 0 }}</p>
     </div>
   </div>
 
@@ -31,7 +31,7 @@
           <i class="fa-solid fa-thumbs-up"></i> LIKE
         </button>
         <p>
-          Likes: <span>{{ comment.likes?.length || 0 }}</span>
+          Likes: <span>{{ comment.likes.length || 0 }}</span>
         </p>
       </div>
     </div>

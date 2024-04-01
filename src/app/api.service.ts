@@ -20,9 +20,8 @@ export class ApiService {
     return this.http.get<CarTheme>(`${url}/themes/${id}`);
   }
 
-  createCarTheme(themeName: string, postText: string) {
-    const url = environment.apiUrl;
-    return this.http.post<CarTheme>(`${url}/themes`, { themeName, postText });
+  postTheme(themeName: string, postText: string) {
+    return this.http.post<CarTheme>('/api/themes', { themeName, postText });
   }
 
   getCarPosts(limit?: number) {

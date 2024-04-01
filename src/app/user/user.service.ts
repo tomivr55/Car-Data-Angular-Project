@@ -2,7 +2,6 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { AuthUser } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -57,6 +56,24 @@ export class UserService implements OnDestroy {
         rePassword,
         tel,
       })
+      .pipe(
+        tap((user) => {
+          this.user$$.next(user);
+        })
+      );
+  }
+
+  getProfile() {
+    return this.http.get<AuthUser>('/api/users/profile').pipe(
+      tap((user) => {
+        this.user$$.next(user);
+      })
+    );
+  }
+
+  updateProfile(username: string, email: string, tel?: string) {
+    return this.http
+      .put<AuthUser>('/api/users/profile', { username, email, tel })
       .pipe(
         tap((user) => {
           this.user$$.next(user);

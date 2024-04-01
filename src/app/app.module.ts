@@ -16,6 +16,7 @@ import { UserModule } from './user/user.module';
 import { ErrorComponent } from './error/error.component';
 import { CarThemeModule } from './car-theme/car-theme.module';
 import { AppInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AppInterceptorProvider } from './app.interceptor';
     CarPostsListComponent,
     HomeComponent,
     ErrorComponent,
+    AuthenticateComponent,
   ],
   imports: [
     BrowserModule,

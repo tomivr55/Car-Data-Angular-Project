@@ -13,12 +13,12 @@
           <p>Phone:</p>
         </div>
 
-        <form class="dinamic" [formGroup]="form">
+        <form class="dinamic" [formGroup]="form" (ngSubmit)="(form)">
           <input
             type="input"
             name="username"
             id="username"
-            [value]="profileDetails.username"
+            [value]="userData.username"
             formControlName="username"
             required
           />
@@ -27,7 +27,7 @@
             type="input"
             name="email"
             id="email"
-            [value]="profileDetails.email"
+            [value]="userData.email"
             formControlName="email"
             required
           />
@@ -35,7 +35,7 @@
             type="input"
             name="tel"
             id="tel"
-            [value]="profileDetails.tel"
+            [value]="userData.tel"
             formControlName="tel"
             required
           />

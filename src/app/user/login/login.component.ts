@@ -26,7 +26,6 @@ export class LoginComponent {
     if (this.form.invalid) {
       return;
     }
-    debugger;
     const { email, password } = this.form.value;
     console.log(this.form.value);
     this.userService
