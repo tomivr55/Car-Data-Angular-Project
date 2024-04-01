@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/api.service';
 import { CarTheme } from 'src/app/types/carTheme';
 import { UserService } from 'src/app/user/user.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-current-car-theme',
@@ -13,7 +14,8 @@ export class CurrentCarThemeComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private userService: UserService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private fb: FormBuilder
   ) {}
 
   currentCarTheme = {} as CarTheme;
@@ -26,6 +28,10 @@ export class CurrentCarThemeComponent implements OnInit {
     return this.userService.user?.username || '';
   }
 
+  form = this.fb.group({
+    postText: ['', [Validators.required]],
+  });
+
   ngOnInit(): void {
     this.activeRoute.params.subscribe((data) => {
       const id = data['themeId'];
@@ -33,5 +39,13 @@ export class CurrentCarThemeComponent implements OnInit {
         this.currentCarTheme = data;
       });
     });
+  }
+
+  comment(): void {
+    // debugger;
+    // this.activeRoute.params.subscribe((data) => {
+    //   const id = data['themeId'];
+    //   this.apiService.postComment(id);
+    // });
   }
 }

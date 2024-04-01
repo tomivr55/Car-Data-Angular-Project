@@ -37,11 +37,38 @@
     </div>
   </div>
 
-  <div class="container" *ngIf="isLoggedIn">
+  <form
+    class="container"
+    *ngIf="isLoggedIn"
+    [formGroup]="form"
+    (ngSubmit)="comment()"
+  >
     <div class="form">
       <p>{{ userName }} comment:</p>
-      <textarea type="text" name="postText" rows="10"></textarea>
+      <textarea
+        type="text"
+        name="postText"
+        id="postText"
+        formControlName="postText"
+        required
+        rows="10"
+      ></textarea>
     </div>
-    <button class="btn fill post">POST</button>
-  </div>
+
+    <ng-container *ngIf="form.get('postText')?.touched">
+      <p class="error" *ngIf="form.get('postText')?.errors?.['required']">
+        This field is required!
+      </p>
+    </ng-container>
+
+    <button
+      class="btn fill post"
+      [disabled]="form.invalid"
+      [style]="{
+        backgroundColor: form.invalid ? '#7D7D7D' : '#00D4FF'
+      }"
+    >
+      POST
+    </button>
+  </form>
 </div>

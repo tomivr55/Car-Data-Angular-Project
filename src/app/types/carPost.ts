@@ -11,3 +11,7 @@ export interface CarPost {
   updatedAt: string;
   __v: number;
 }
+
+export interface Component {
+  postText: string;
+}
