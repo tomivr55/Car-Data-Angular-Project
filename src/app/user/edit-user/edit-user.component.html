@@ -20,13 +20,16 @@
             id="username"
             [value]="profileDetails.username"
             formControlName="username"
+            required
           />
+
           <input
             type="input"
             name="email"
             id="email"
             [value]="profileDetails.email"
             formControlName="email"
+            required
           />
           <input
             type="input"
@@ -34,13 +37,35 @@
             id="tel"
             [value]="profileDetails.tel"
             formControlName="tel"
+            required
           />
         </form>
       </div>
+      <ng-container *ngIf="form.get('username')?.touched">
+        <p class="error" *ngIf="form.get('username')?.errors?.['required']">
+          Username is required!
+        </p>
+        <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">
+          Username must be at least 5 characters!
+        </p>
+      </ng-container>
+
+      <ng-container *ngIf="form.get('email')?.touched">
+        <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+          Email is required!
+        </p>
+        <p class="error" *ngIf="form.get('email')?.errors?.['emailValidator']">
+          Email is not valid!
+        </p>
+      </ng-container>
     </div>
     <div class="button-wrapper">
       <button routerLink="/profile" class="btn fill red">Cancel</button>
       <button
+        [disabled]="form.invalid"
+        [style]="{
+          backgroundColor: form.invalid ? '#7D7D7D' : '#00D4FF'
+        }"
         class="btn fill blue"
         type="submit"
         (click)="saveProfileHandler()"

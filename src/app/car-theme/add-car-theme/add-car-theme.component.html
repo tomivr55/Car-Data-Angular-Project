@@ -43,7 +43,16 @@
             Post must be at least 10 characters long!
           </p>
         </ng-container>
-        <input type="button" type="submit" class="button" value="POST" />
+        <input
+          [disabled]="form.invalid"
+          [style]="{
+            backgroundColor: form.invalid ? '#7D7D7D' : '#00D4FF'
+          }"
+          type="button"
+          type="submit"
+          class="button"
+          value="POST"
+        />
       </form>
     </div>
   </div>

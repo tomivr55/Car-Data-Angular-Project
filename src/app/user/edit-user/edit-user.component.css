@@ -134,3 +134,9 @@ h1 {
   filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
   transition: all 0.3s ease;
 }
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding-top: 0;
+}

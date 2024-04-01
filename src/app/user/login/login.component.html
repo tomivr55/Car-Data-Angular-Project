@@ -6,7 +6,10 @@
       </div>
       <form [formGroup]="form" (ngSubmit)="login()">
         <input
-          [style]="{borderLeftColor : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' red' : 'green'}"
+          [style]="{borderLeftColor : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' red' : '',
+           borderRightColor : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' red' : '', 
+           borderLeftWidth : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' 3px' : '', 
+           borderRightWidth : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' 3px' : ''}"
           type="email"
           name="email"
           id="email"
@@ -32,6 +35,10 @@
         </ng-container>
 
         <input
+          [style]="{borderLeftColor : (form.get('password')?.touched && form.get('password')?.errors?.['required']) || form.get('password')?.errors?.['minlength'] ? ' red' : '',
+           borderRightColor : (form.get('password')?.touched && form.get('password')?.errors?.['required']) || form.get('password')?.errors?.['minlength'] ? ' red' : '', 
+           borderLeftWidth : (form.get('password')?.touched && form.get('password')?.errors?.['required']) || form.get('password')?.errors?.['minlength'] ? ' 3px' : '', 
+           borderRightWidth : (form.get('password')?.touched && form.get('password')?.errors?.['required']) || form.get('password')?.errors?.['minlength'] ? ' 3px' : ''}"
           type="password"
           name="password"
           id="password"
@@ -50,7 +57,16 @@
             <!--ако е по къса от 5 символа-->
           </p>
         </ng-container>
-        <input type="button" class="button" value="LOGIN" type="submit" />
+        <input
+          [disabled]="form.invalid"
+          [style]="{
+            backgroundColor: form.invalid ? '#7D7D7D' : '#00D4FF'
+          }"
+          type="button"
+          class="button"
+          value="LOGIN"
+          type="submit"
+        />
       </form>
       <div class="register">
         <span class="register"

@@ -6,6 +6,10 @@
       </div>
       <form [formGroup]="form" (ngSubmit)="register()">
         <input
+          [style]="{borderLeftColor : (form.get('username')?.touched && form.get('username')?.errors?.['required']) || form.get('username')?.errors?.['minlength'] ? ' red' : '',
+           borderRightColor : (form.get('username')?.touched && form.get('username')?.errors?.['required']) || form.get('username')?.errors?.['minlength'] ? ' red' : '', 
+           borderLeftWidth : (form.get('username')?.touched && form.get('username')?.errors?.['required']) || form.get('username')?.errors?.['minlength'] ? ' 3px' : '', 
+           borderRightWidth : (form.get('username')?.touched && form.get('username')?.errors?.['required']) || form.get('username')?.errors?.['minlength'] ? ' 3px' : ''}"
           type="text"
           name="username"
           id="username"
@@ -25,6 +29,10 @@
         </ng-container>
 
         <input
+          [style]="{borderLeftColor : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' red' : '',
+           borderRightColor : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' red' : '', 
+           borderLeftWidth : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' 3px' : '', 
+           borderRightWidth : (form.get('email')?.touched && form.get('email')?.errors?.['required']) || form.get('email')?.errors?.['emailValidator'] ? ' 3px' : ''}"
           type="text"
           name="email"
           id="email"
@@ -51,6 +59,10 @@
         />
         <ng-container formGroupName="passGroup">
           <input
+            [style]="{borderLeftColor : (form.get('passGroup')?.get('password')?.touched && form.get('passGroup')?.get('password')?.errors?.['required']) || form.get('passGroup')?.get('password')?.errors?.['minlength'] ? ' red' : '',
+           borderRightColor : (form.get('passGroup')?.get('password')?.touched && form.get('passGroup')?.get('password')?.errors?.['required']) || form.get('passGroup')?.get('password')?.errors?.['minlength'] ? ' red' : '', 
+           borderLeftWidth : (form.get('passGroup')?.get('password')?.touched && form.get('passGroup')?.get('password')?.errors?.['required']) || form.get('passGroup')?.get('password')?.errors?.['minlength'] ? ' 3px' : '', 
+           borderRightWidth : (form.get('passGroup')?.get('password')?.touched && form.get('passGroup')?.get('password')?.errors?.['required']) || form.get('passGroup')?.get('password')?.errors?.['minlength'] ? ' 3px' : ''}"
             type="password"
             name="password"
             id="password"
@@ -73,6 +85,10 @@
             </p>
           </ng-container>
           <input
+            [style]="{borderLeftColor : (form.get('passGroup')?.get('rePassword')?.touched && form.get('passGroup')?.get('rePassword')?.errors?.['required']) || form.get('passGroup')?.get('rePassword')?.errors?.['minlength'] ? ' red' : '',
+           borderRightColor : (form.get('passGroup')?.get('rePassword')?.touched && form.get('passGroup')?.get('rePassword')?.errors?.['required']) || form.get('passGroup')?.get('rePassword')?.errors?.['minlength'] ? ' red' : '', 
+           borderLeftWidth : (form.get('passGroup')?.get('rePassword')?.touched && form.get('passGroup')?.get('rePassword')?.errors?.['required']) || form.get('passGroup')?.get('rePassword')?.errors?.['minlength'] ? ' 3px' : '', 
+           borderRightWidth : (form.get('passGroup')?.get('rePassword')?.touched && form.get('passGroup')?.get('rePassword')?.errors?.['required']) || form.get('passGroup')?.get('rePassword')?.errors?.['minlength'] ? ' 3px' : ''}"
             type="password"
             name="rePassword"
             id="rePassword"
@@ -93,6 +109,9 @@
         </ng-container>
         <input
           [disabled]="form.invalid"
+          [style]="{
+            backgroundColor: form.invalid ? '#7D7D7D' : '#00D4FF'
+          }"
           type="button"
           class="button"
           value="REGISTER"
