@@ -3,8 +3,12 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  height: auto;
+  height: 85vh;
   gap: 2em;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 .block-name h1 {
