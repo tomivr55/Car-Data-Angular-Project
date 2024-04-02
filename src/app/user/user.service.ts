@@ -2,6 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { AuthUser } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })

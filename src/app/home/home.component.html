@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="content">
+  <h1>Find the right car for your preferences!</h1>
+  <div class="container">
+    <div class="banner-image">
+      <img src="../../assets/home-car.png" alt="Crash" />
+    </div>
+    <p>
+      Uur forum is a place, where you can post your questions, comment, and
+      discuss problems. <br />
+      <span *ngIf="!isLoggedIn">
+        if you want to make a post <a routerLink="/login">login</a>
+      </span>
+    </p>
+  </div>
+</div>

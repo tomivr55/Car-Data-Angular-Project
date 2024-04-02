@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-add-car-theme',
@@ -19,6 +18,7 @@ export class AddCarThemeComponent {
   form = this.fb.group({
     themeName: ['', [Validators.required, Validators.minLength(5)]],
     postText: ['', [Validators.required, Validators.minLength(10)]],
+    pic: ['', [Validators.required]],
   });
 
   addTheme(): void {
@@ -26,10 +26,11 @@ export class AddCarThemeComponent {
       return;
     }
 
-    const { themeName, postText } = this.form.value;
+    const { themeName, postText, pic } = this.form.value;
+    console.log('pic: ' + pic);
+
     this.apiService
-      .postTheme(themeName!, postText!)
+      .postTheme(themeName!, postText!, pic!)
       .subscribe(() => this.router.navigate(['/themes']));
-    console.log(this.form.value);
   }
 }

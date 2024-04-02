@@ -15,13 +15,28 @@
           formControlName="themeName"
           required
         />
-
         <ng-container *ngIf="form.get('themeName')?.touched">
           <p class="error" *ngIf="form.get('themeName')?.errors?.['required']">
             Theme name is required!
           </p>
           <p class="error" *ngIf="form.get('themeName')?.errors?.['minlength']">
             Theme name must be at least 5 characters long!
+          </p>
+        </ng-container>
+
+        <p>Image:</p>
+        <input
+          type="text"
+          name="pic"
+          id="pic"
+          placeholder="https://....."
+          formControlName="pic"
+          required
+        />
+
+        <ng-container *ngIf="form.get('pic')?.touched">
+          <p class="error" *ngIf="form.get('pic')?.errors?.['required']">
+            Image is required!
           </p>
         </ng-container>
 

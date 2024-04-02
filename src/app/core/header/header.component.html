@@ -15,7 +15,7 @@
         <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
 
         <li *ngIf="isLoggedIn" (click)="logout()">
-          <a>Logout</a>
+          <a routerLink="/home">Logout</a>
         </li>
         <li *ngIf="!isLoggedIn">
           <a routerLink="/register">Register</a>

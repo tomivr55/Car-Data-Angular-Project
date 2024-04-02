@@ -3,6 +3,9 @@
   <div class="all-car-theme">
     <div *ngFor="let carTheme of carThemes" class="container">
       <div class="wrapper">
+        <div class="banner-image">
+          <img src="{{ carTheme.pic }}" alt="car" />
+        </div>
         <div class="title">
           <h1>{{ carTheme.themeName }}</h1>
         </div>

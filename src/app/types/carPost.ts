@@ -12,6 +12,6 @@ export interface CarPost {
   __v: number;
 }
 
-export interface Component {
+export interface Comment {
   postText: string;
 }

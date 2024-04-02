@@ -6,14 +6,18 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable, Provider } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable, catchError } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
+import { ErrorService } from './error.service';
 
 const { apiUrl } = environment;
 
 @Injectable()
 class AppInterceptor implements HttpInterceptor {
   api = '/api';
+
+  constructor(private errorService: ErrorService, private router: Router) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
@@ -24,9 +28,19 @@ class AppInterceptor implements HttpInterceptor {
         withCredentials: true, //когато се направи POST req към сървъра и той ни върне coocie, ние му го връщаме
       });
     }
-    console.log(req);
 
-    return next.handle(req);
+    return next.handle(req).pipe(
+      catchError((err) => {
+        if (err.status === 401) {
+          this.router.navigate(['/auth/login']);
+        } else {
+          this.errorService.setError(err);
+          this.router.navigate(['/error']);
+        }
+
+        return [err];
+      })
+    );
   }
 }
 

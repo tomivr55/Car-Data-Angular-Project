@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { CarTheme } from 'src/app/types/carTheme';
 import { UserService } from 'src/app/user/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,8 @@ export class CurrentCarThemeComponent implements OnInit {
     private apiService: ApiService,
     private userService: UserService,
     private activeRoute: ActivatedRoute,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
 
   currentCarTheme = {} as CarTheme;
@@ -42,10 +43,21 @@ export class CurrentCarThemeComponent implements OnInit {
   }
 
   comment(): void {
-    // debugger;
-    // this.activeRoute.params.subscribe((data) => {
-    //   const id = data['themeId'];
-    //   this.apiService.postComment(id);
-    // });
+    if (this.form.invalid) {
+      return;
+    }
+
+    const { postText } = this.form.value;
+    debugger;
+
+    this.activeRoute.params.subscribe((data) => {
+      const id = data['themeId'];
+
+      console.log(id, postText);
+
+      this.apiService
+        .postComment(id, postText!)
+        .subscribe(() => this.router.navigate([`/themes`]));
+    });
   }
 }
