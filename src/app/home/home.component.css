@@ -12,7 +12,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 85vh;
 }
 
 .container {
@@ -59,4 +58,83 @@ span a {
 
 span a:hover {
   color: white;
+}
+
+.last-theme {
+  display: flex;
+  gap: 2em;
+}
+.last-theme .container-car {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 12px;
+  padding: 18px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.last-theme .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.last-theme .banner-image img {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 130px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.255);
+}
+
+.last-theme .title h1 {
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.last-theme .button-wrapper {
+  margin: 18px 0px;
+}
+
+.last-theme .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.last-theme .fill {
+  background: rgba(0, 212, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.last-theme .btn {
+  background: rgba(0, 212, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0);
+  font-weight: bold;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 24px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.fill:hover {
+  transform: scale(1.125);
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+  transition: all 0.3s ease;
 }

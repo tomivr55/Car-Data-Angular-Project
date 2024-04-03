@@ -5,11 +5,35 @@
       <img src="../../assets/home-car.png" alt="Crash" />
     </div>
     <p>
-      Uur forum is a place, where you can post your questions, comment, and
+      Our forum is a place, where you can post your questions, comment, and
       discuss problems. <br />
       <span *ngIf="!isLoggedIn">
         if you want to make a post <a routerLink="/login">login</a>
       </span>
     </p>
+    <p>The last created car themes.</p>
+
+    <div class="last-theme">
+      <div *ngFor="let carTheme of lastCarTheme" class="container-car">
+        <div class="wrapper">
+          <div class="banner-image">
+            <img src="{{ carTheme.pic }}" alt="car" />
+          </div>
+          <div class="title">
+            <h1>{{ carTheme.themeName }}</h1>
+          </div>
+
+          <div class="button-wrapper">
+            <button [routerLink]="carTheme._id" class="btn fill">
+              COMMENTS
+            </button>
+          </div>
+          <div class="info">
+            <p>Theme made by: {{ carTheme.userId.username }}</p>
+            <p>{{ carTheme.created_at | elapsed }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

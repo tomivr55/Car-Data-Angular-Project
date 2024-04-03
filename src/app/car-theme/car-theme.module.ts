@@ -5,9 +5,15 @@ import { CurrentCarThemeComponent } from './current-car-theme/current-car-theme.
 import { CarThemeRoutingModule } from './car-theme-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddCarThemeComponent } from './add-car-theme/add-car-theme.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [AddCarThemeComponent, CurrentCarThemeComponent],
-  imports: [CommonModule, CarThemeRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    CarThemeRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
 export class CarThemeModule {}
