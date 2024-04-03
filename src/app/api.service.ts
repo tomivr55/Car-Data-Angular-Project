@@ -43,4 +43,10 @@ export class ApiService {
 
     return this.http.get<CarPost[]>(limitUrl);
   }
+
+  likePost(postId: string) {
+    const url = environment.apiUrl;
+
+    return this.http.put<CarPost>(`/api/likes/${postId}`, {});
+  }
 }

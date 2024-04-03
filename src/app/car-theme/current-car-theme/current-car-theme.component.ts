@@ -57,4 +57,9 @@ export class CurrentCarThemeComponent implements OnInit {
         .subscribe(() => this.router.navigate([`/themes`]));
     });
   }
+
+  onLike(postId: string) {
+    this.apiService.likePost(postId).subscribe();
+    console.log(postId);
+  }
 }

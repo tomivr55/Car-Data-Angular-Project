@@ -25,6 +25,7 @@ export class AppInterceptor implements HttpInterceptor {
     if (req.url.startsWith(this.api)) {
       req = req.clone({
         url: req.url.replace(this.api, apiUrl),
+
         withCredentials: true, //когато се направи POST req към сървъра и той ни върне coocie, ние му го връщаме
       });
     }
