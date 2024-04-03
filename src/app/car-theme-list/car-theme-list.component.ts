@@ -29,7 +29,7 @@ export class CarThemeListComponent implements OnInit {
 
   isSubscribed(carTheme: CarTheme) {
     const isSubscribedUser = carTheme.subscribers.find((s) => {
-      return s === this.userService.user?.id;
+      return s !== this.userService.user?.id;
     });
     return !!isSubscribedUser; // за да стане true/false
   }

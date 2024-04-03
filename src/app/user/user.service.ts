@@ -18,7 +18,6 @@ export class UserService implements OnDestroy {
   }
 
   user: AuthUser | undefined;
-  USER_KEY = '[user]';
 
   userSubscription: Subscription;
 
@@ -29,7 +28,9 @@ export class UserService implements OnDestroy {
   login(email: string, password: string) {
     return this.http.post<AuthUser>('/api/login', { email, password }).pipe(
       tap((user) => {
+        localStorage.setItem('currentUser', JSON.stringify(user));
         this.user$$.next(user);
+        console.log(user);
       })
     );
   }
