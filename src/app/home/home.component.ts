@@ -27,9 +27,6 @@ export class HomeComponent implements OnInit {
       const lastCarThemeEdited = theme;
       const last = lastCarThemeEdited.slice(-4).reverse();
       this.lastCarTheme = last;
-      console.log(last);
     });
   }
-
-  goto(): void {}
 }

@@ -29,7 +29,6 @@ export class ApiService {
   }
 
   postComment(id: string, postText: string) {
-    debugger;
     const url = environment.apiUrl;
     return this.http.post<Comment>(`/api/themes/${id}`, { postText });
   }

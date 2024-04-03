@@ -27,7 +27,6 @@ export class LoginComponent {
       return;
     }
     const { email, password } = this.form.value;
-    debugger;
     this.userService
       .login(email!, password!)
       .subscribe(() => this.router.navigate(['/home']));
