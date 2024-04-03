@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { CarTheme } from './types/carTheme';
 import { CarPost } from './types/carPost';
-import { UserService } from './user/user.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  constructor(private http: HttpClient, private userServise: UserService) {}
+  constructor(private http: HttpClient) {}
 
   getCarThemes() {
     const url = environment.apiUrl;
@@ -43,14 +42,5 @@ export class ApiService {
     }
 
     return this.http.get<CarPost[]>(limitUrl);
-  }
-
-  likePost(postId: string) {
-    const url = environment.apiUrl;
-    const token = this.userServise.user!;
-    console.log(token);
-
-    debugger;
-    return this.http.put<any>(`${url}/likes/${postId}`, {});
   }
 }
