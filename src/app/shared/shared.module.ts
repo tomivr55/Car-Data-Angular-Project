@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { EmailDirective } from './validators/email.directive';
 import { ElapsedPipe } from './pipes/elapsed.pipe';
 import { FormatedPipe } from './pipes/formated.pipe';
-import { Formated1Pipe } from './pipes/formated1.pipe';
 
 @NgModule({
-  declarations: [EmailDirective, ElapsedPipe, FormatedPipe, Formated1Pipe],
+  declarations: [EmailDirective, ElapsedPipe, FormatedPipe],
   imports: [CommonModule],
-  exports: [EmailDirective, ElapsedPipe, FormatedPipe, Formated1Pipe],
+  exports: [EmailDirective, ElapsedPipe, FormatedPipe],
 })
 export class SharedModule {}

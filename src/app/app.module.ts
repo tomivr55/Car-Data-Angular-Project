@@ -15,9 +15,8 @@ import { UserModule } from './user/user.module';
 
 import { ErrorComponent } from './error/error.component';
 import { CarThemeModule } from './car-theme/car-theme.module';
-
-import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { AppInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,13 @@ import { AppInterceptorProvider } from './app.interceptor';
     CarThemeModule,
     AppRoutingModule,
   ],
-  providers: [AppInterceptorProvider],
+  providers: [
+    AppInterceptorProvider,
+    {
+      provide: DATE_PIPE_DEFAULT_OPTIONS,
+      useValue: { dateFormat: 'short' },
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

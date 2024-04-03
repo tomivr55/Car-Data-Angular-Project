@@ -7,7 +7,7 @@
       <p>{{ coment.text }}</p>
       <hr />
       <div class="info">
-        <p>{{ coment.created_at | formated }}</p>
+        <p>{{ coment.created_at | date }}</p>
         <p>{{ coment.created_at | elapsed }}</p>
         <p>{{ coment.userId.username }}</p>
       </div>

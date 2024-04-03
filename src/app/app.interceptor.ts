@@ -14,7 +14,7 @@ import { ErrorService } from './error.service';
 const { apiUrl } = environment;
 
 @Injectable()
-class AppInterceptor implements HttpInterceptor {
+export class AppInterceptor implements HttpInterceptor {
   api = '/api';
 
   constructor(private errorService: ErrorService, private router: Router) {}
