@@ -60,6 +60,5 @@ export class CurrentCarThemeComponent implements OnInit {
 
   onLike(postId: string) {
     this.apiService.likePost(postId).subscribe();
-    console.log(postId);
   }
 }

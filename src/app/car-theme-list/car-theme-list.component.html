@@ -23,7 +23,7 @@
         <button
           *ngIf="isLoggedIn && !isSubscribed(carTheme)"
           class="btn fill sub"
-          (click)="subscribe()"
+          (click)="onSubscribe(carTheme._id)"
         >
           SUBSCRIBE
         </button>

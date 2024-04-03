@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { CarTheme } from '../types/carTheme';
 import { UserService } from '../user/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-theme-list',
@@ -13,7 +13,9 @@ export class CarThemeListComponent implements OnInit {
   constructor(
     private api: ApiService,
     private userService: UserService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private apiService: ApiService,
+    private router: Router
   ) {}
   carThemes: CarTheme[] = [];
 
@@ -25,11 +27,15 @@ export class CarThemeListComponent implements OnInit {
     return this.userService.user?.id || '';
   }
 
-  subscribe(): void {}
+  onSubscribe(themeId: string): void {
+    this.apiService
+      .subscribe(themeId)
+      .subscribe(() => this.router.navigate([`/themes`]));
+  }
 
   isSubscribed(carTheme: CarTheme) {
     const isSubscribedUser = carTheme.subscribers.find((s) => {
-      return s !== this.userService.user?.id;
+      return s === this.userService.user?.id;
     });
     return !!isSubscribedUser; // за да стане true/false
   }

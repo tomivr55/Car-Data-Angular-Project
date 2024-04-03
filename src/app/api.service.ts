@@ -35,18 +35,18 @@ export class ApiService {
 
   getCarPosts(limit?: number) {
     const url = environment.apiUrl;
-
     let limitUrl = `${url}/posts`;
     if (limit) {
       limitUrl += `?limit=${limit}`;
     }
-
     return this.http.get<CarPost[]>(limitUrl);
   }
 
   likePost(postId: string) {
-    const url = environment.apiUrl;
-
     return this.http.put<CarPost>(`/api/likes/${postId}`, {});
+  }
+
+  subscribe(themeId: string) {
+    return this.http.put<CarTheme>(`/api/themes/${themeId}`, {});
   }
 }
