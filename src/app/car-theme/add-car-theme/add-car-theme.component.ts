@@ -27,7 +27,6 @@ export class AddCarThemeComponent {
     }
 
     const { themeName, postText, pic } = this.form.value;
-    console.log('pic: ' + pic);
 
     this.apiService
       .postTheme(themeName!, postText!, pic!)

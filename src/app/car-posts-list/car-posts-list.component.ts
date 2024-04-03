@@ -12,7 +12,6 @@ export class CarPostsListComponent implements OnInit {
   themeComent: CarPost[] = [];
   ngOnInit(): void {
     this.api.getCarPosts().subscribe((post) => {
-      console.log(post);
       this.themeComent = post;
     });
   }

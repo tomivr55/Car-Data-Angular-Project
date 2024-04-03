@@ -27,7 +27,7 @@
     </div>
     <div class="info">
       <div class="button-wrapper">
-        <button *ngIf="isLoggedIn" class="btn fill">
+        <button *ngIf="isLoggedIn" class="btn fill" (click)="like()">
           <i class="fa-solid fa-thumbs-up"></i> LIKE
         </button>
         <p>

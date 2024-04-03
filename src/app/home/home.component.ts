@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service';
 import { CarTheme } from '../types/carTheme';
 import { ApiService } from '../api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import { ApiService } from '../api.service';
 export class HomeComponent implements OnInit {
   constructor(
     private userService: UserService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private activeRoute: ActivatedRoute
   ) {}
 
   lastCarTheme: CarTheme[] = [];
@@ -25,6 +27,9 @@ export class HomeComponent implements OnInit {
       const lastCarThemeEdited = theme;
       const last = lastCarThemeEdited.slice(-4).reverse();
       this.lastCarTheme = last;
+      console.log(last);
     });
   }
+
+  goto(): void {}
 }

@@ -48,16 +48,15 @@ export class CurrentCarThemeComponent implements OnInit {
     }
 
     const { postText } = this.form.value;
-    debugger;
 
     this.activeRoute.params.subscribe((data) => {
       const id = data['themeId'];
-
-      console.log(id, postText);
 
       this.apiService
         .postComment(id, postText!)
         .subscribe(() => this.router.navigate([`/themes`]));
     });
   }
+
+  like(): void {}
 }

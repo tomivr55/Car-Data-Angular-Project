@@ -51,7 +51,7 @@ export class EditUserComponent implements OnInit {
       return;
     }
     const { username, email, tel } = this.form.value;
-    console.log({ username, email, tel });
+
     debugger;
     this.userService.updateProfile(username!, email!, tel!).subscribe(() => {
       this.router.navigate(['/profile']);
