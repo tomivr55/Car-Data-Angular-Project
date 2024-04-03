@@ -1,7 +1,7 @@
 <div class="content">
   <div class="container">
     <div class="theme">
-      <p>Date: {{ currentCarTheme.created_at | date }}</p>
+      <p>Date: {{ currentCarTheme.created_at | formated }}</p>
       <h1>{{ currentCarTheme.themeName }}</h1>
       <p>Subscribers: {{ currentCarTheme.subscribers.length || 0 }}</p>
     </div>
